@@ -1,20 +1,38 @@
-// myfirstcalculator.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+using namespace std;
 
-int main()
-{
-    std::cout << "Hello World!\n";
+double numOne;
+char combination;
+double numTwo;
+
+int handleCalculation(int valueOne, int valueTwo, char valueThree){
+	switch (combination){
+	case '+': 
+		return numOne + numTwo;
+	case '-':
+		return numOne - numTwo;
+	case '*':
+		return numOne * numTwo;
+	case '/':
+		return numOne / numTwo;
+	default:
+		return 0;
+
+	}
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+
+void main()
+{
+	cout << "First number." << endl << endl;
+	cin >> numOne;
+	cout << endl;
+	cout << "Choose operation" << endl;
+	cout << endl;
+	cin >> combination;
+	cout << "Second number." << endl;
+	cout << endl;
+	cin >> numTwo;
+	cout << handleCalculation(numOne, numTwo, combination);
+}
